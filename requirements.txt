@@ -4,3 +4,4 @@ scikit-learn
 fuzzywuzzy
 beautifulsoup4
 nltk
+streamlit
