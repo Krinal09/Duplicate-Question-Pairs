@@ -4,9 +4,12 @@ import difflib
 from fuzzywuzzy import fuzz
 import pickle
 import numpy as np
+import nltk
 from nltk.corpus import stopwords
 
 cv = pickle.load(open('cv.pkl', 'rb'))
+
+nltk.download('stopwords')
 
 def test_common_words(q1, q2):
     w1 = set(map(lambda word: word.lower().strip(), q1.split(" ")))
