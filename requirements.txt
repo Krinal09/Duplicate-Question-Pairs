@@ -5,3 +5,4 @@ fuzzywuzzy
 beautifulsoup4
 nltk
 streamlit
+difflib
