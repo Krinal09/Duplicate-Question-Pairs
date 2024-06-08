@@ -1,5 +1,6 @@
-beautifulsoup4==4.12.3
-fuzzywuzzy==0.18.0
-nltk==3.8.1
-numpy==1.26.4
-streamlit==1.34.0
+numpy
+pandas
+scikit-learn
+fuzzywuzzy
+beautifulsoup4
+nltk
