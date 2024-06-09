@@ -7,6 +7,7 @@ import numpy as np
 import nltk
 from nltk.corpus import stopwords
 
+# Download stopwords
 nltk.download('stopwords')
 
 cv = pickle.load(open('cv.pkl', 'rb'))
@@ -54,24 +55,18 @@ def test_fetch_token_features(q1, q2):
 def test_fetch_length_features(q1, q2):
     length_features = [0.0] * 3
 
-    # Converting the Sentence into Tokens:
     q1_tokens = q1.split()
     q2_tokens = q2.split()
 
     if len(q1_tokens) == 0 or len(q2_tokens) == 0:
         return length_features
 
-    # Absolute length features
     length_features[0] = abs(len(q1_tokens) - len(q2_tokens))
-
-    # Average Token Length of both Questions
     length_features[1] = (len(q1_tokens) + len(q2_tokens)) / 2
 
-    # Find the longest common substring using SequenceMatcher
     matcher = difflib.SequenceMatcher(None, q1, q2)
     match = matcher.find_longest_match(0, len(q1), 0, len(q2))
     longest_common_substring = q1[match.a: match.a + match.size]
-
     length_features[2] = len(longest_common_substring) / (min(len(q1), len(q2)) + 1)
 
     return length_features
@@ -172,4 +167,3 @@ def query_point_creator(q1, q2):
     input_query = np.array(input_query).reshape(1, -1)
     
     return np.hstack((input_query, q1_bow, q2_bow))
-
