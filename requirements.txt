@@ -1,8 +1,5 @@
-numpy
-pandas
-scikit-learn
-fuzzywuzzy
-beautifulsoup4
-nltk
 streamlit
-difflib
+sklearn
+fuzzywuzzy
+distance
+bs4
