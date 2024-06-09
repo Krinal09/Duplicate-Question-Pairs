@@ -1,5 +1,6 @@
 streamlit
-sklearn
+beautifulsoup4
 fuzzywuzzy
-distance
-bs4
+python-Levenshtein
+scikit-learn==1.5.0
+nltk
